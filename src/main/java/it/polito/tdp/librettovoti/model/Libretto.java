@@ -22,4 +22,52 @@ public class Libretto {
 		return s;
 	}
 	
+	/*public String votiUguali1(int punteggio) {
+		//calcola una string contenente i voti 
+		return"";
+	}
+	public List<Voto> votiUguali2(int punteggio){
+		//crea una string con i voti 
+		//meglio del votiUguali perche mi crea una lista
+		//espone però all'esterno la struttura dati che ho usato
+		return 
+	}*/
+	public Libretto votiUguali(int punteggio) {
+		Libretto risultato = new Libretto ();
+		for(Voto v : this.voti) {
+			if(v.getVoto()==punteggio) {
+				risultato.add(v);
+				//risultato.voti.add(v);
+			}
+		}
+		return risultato;
+	}
+	/**
+	 * Ricerca un Voto del corso di cui è specificato il nome 
+	 * Se il corso non esiste restituisco null
+	 * @param nomeCorso
+	 * @return
+	 */
+	public Voto ricercaCorso(String nomeCorso) {
+		Voto risultato = null;
+		for(Voto v: this.voti) {
+			if(v.getNome().equals(nomeCorso)) {
+				risultato = v;
+				break;
+			}
+		}
+		return risultato;
+	}
+	public List<Voto> listavotiUguali(int punteggio) {
+		//questo metodo risolve il problema del far visualizzare come salvo i miei dati 
+		//e io ho gia salvato nella mia classe i voti
+		ArrayList<Voto> risultato = new ArrayList<Voto>();
+		for(Voto v : this.voti) {
+			if(v.getVoto()==punteggio) {
+				risultato.add(v);
+			}
+		}
+		return risultato;
+	}
+	
 }
