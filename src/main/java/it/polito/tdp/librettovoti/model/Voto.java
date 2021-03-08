@@ -42,6 +42,9 @@ public class Voto {
 		this.data = data;
 	}
 
+	/**
+	 * stampa il voto con i suoi attributi
+	 */
 	@Override
 	public String toString() {
 		return "Nome Esame = " + nome + ", Voto conseguito = " + voto + ", Data svolgimento esame : " + data+"; " ;

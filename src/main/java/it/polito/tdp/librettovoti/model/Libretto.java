@@ -10,9 +10,16 @@ public class Libretto {
 		
 		this.voti = new ArrayList<>();
 	}
+	/**
+	 * Aggiumge un voto al libretto
+	 * @param v
+	 */
 	public void add(Voto v) {
 		this.voti.add(v);
 	}
+	/**
+	 * Stampa il libretto
+	 */
 	public String toString() {
 		
 		String s ="";
@@ -32,6 +39,11 @@ public class Libretto {
 		//espone però all'esterno la struttura dati che ho usato
 		return 
 	}*/
+	/**
+	 * Salv ai voti in una lista libretto dei voti uguali al punteggi inserito
+	 * @param punteggio
+	 * @return
+	 */
 	public Libretto votiUguali(int punteggio) {
 		Libretto risultato = new Libretto ();
 		for(Voto v : this.voti) {
@@ -58,6 +70,11 @@ public class Libretto {
 		}
 		return risultato;
 	}
+	/**
+	 * Salva in una lista i voti uguali al punteggio inseriti
+	 * @param punteggio
+	 * @return
+	 */
 	public List<Voto> listavotiUguali(int punteggio) {
 		//questo metodo risolve il problema del far visualizzare come salvo i miei dati 
 		//e io ho gia salvato nella mia classe i voti

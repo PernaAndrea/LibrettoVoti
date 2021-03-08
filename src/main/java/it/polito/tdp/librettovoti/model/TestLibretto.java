@@ -43,7 +43,7 @@ public class TestLibretto {
 		
 		System.out.println(libretto); // TASK 1
 		
-	//	System.out.println(libretto.listavotiUguali(25));
+		//System.out.println(libretto.listavotiUguali(25));
 		//oppure
 		//List<Voto> venticinque = libretto.listavotiUguali(25);
 		//System.out.println(venticinque);
