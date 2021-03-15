@@ -4,11 +4,15 @@ import java.util.*;
 
 public class Libretto {
 
+	//SI COMPORTA DA MODELLO
+	
 	private List<Voto> voti;
+	private Map<String,Voto> votiMap; // identity Map: neme esame in oggetto voto
 	
 	public Libretto() {
 		
 		this.voti = new ArrayList<>();
+		this.votiMap  =new HashMap<>();
 	}
 	/**
 	 * Aggiumge un voto al libretto
@@ -16,6 +20,7 @@ public class Libretto {
 	 */
 	public void add(Voto v) {
 		this.voti.add(v);
+		this.votiMap.put(v.getNome(), v);
 	}
 	/**
 	 * Stampa il libretto
@@ -61,14 +66,61 @@ public class Libretto {
 	 * @return
 	 */
 	public Voto ricercaCorso(String nomeCorso) {
-		Voto risultato = null;
+	/*	Voto risultato = null;
 		for(Voto v: this.voti) {
 			if(v.getNome().equals(nomeCorso)) {
 				risultato = v;
 				break;
 			}
 		}
-		return risultato;
+		return risultato;*/
+		return this.votiMap.get(nomeCorso); // con una mappa posso gestirla meglio cosi...
+	}
+	/**
+	 * Verifica ch enel libretto esiste un esame con lo stesso nome e voto
+	 * @param v
+	 * @return
+	 */
+	public boolean esisteDuplicato(Voto v) {
+	/*	boolean trovato = false;
+		for(Voto voto:this.voti) { // con una mappa potrei evitare questa iterazione costosa
+			if(voto.getNome().equals(v.getNome()) && voto.getVoto()==v.getVoto()) {
+				trovato = true;
+				break;
+			}
+		}
+		return trovato;*/
+	Voto trovato = this.votiMap.get(v.getNome());
+	if(trovato == null) {
+		return false;
+	}
+	if(trovato.getVoto()==v.getVoto()) {
+		return true;
+	}else
+		return false;
+	}
+	/**
+	 * Verifica che nel libretto c'è gia lo stesso esame (nome ) ma con votazione diversa
+	 * @param v
+	 * @return
+	 */
+	public boolean  esisteConflitto(Voto v) {
+/*		boolean trovato = false;
+		for(Voto voto:this.voti) { // con una mappa potrei evitare questa iterazione costosa
+			if(voto.getNome().equals(v.getNome()) && voto.getVoto()!=v.getVoto()) {
+				trovato = true;
+				break;
+			}
+		}
+		return trovato;*/
+		Voto trovato = this.votiMap.get(v.getNome());
+		if(trovato == null) {
+			return false;
+		}
+		if(trovato.getVoto()!=v.getVoto()) {
+			return true;
+		}else
+			return false;
 	}
 	/**
 	 * Salva in una lista i voti uguali al punteggio inseriti
@@ -85,6 +137,7 @@ public class Libretto {
 			}
 		}
 		return risultato;
+		
 	}
 	
 }
