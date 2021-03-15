@@ -8,7 +8,7 @@ public class TestLibretto {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		System.out.println("Test metodi Libretto");
+		System.out.println("Test metodi Libretto \n");
 		Libretto libretto= new Libretto();
 		
 		Voto voto1 = new Voto("Analisi 1", 30,LocalDate.of(2019, 2,15));
@@ -41,16 +41,18 @@ public class TestLibretto {
 		Voto voto10 = new Voto("Tecniche di programmazione", 30,LocalDate.of(2021, 6,19));
 		libretto.add(voto10);
 		
+		System.out.println("TASK 1 : inserire 10 oggetti nel libretto: \n");
 		System.out.println(libretto); // TASK 1
 		
 		//System.out.println(libretto.listavotiUguali(25));
 		//oppure
 		//List<Voto> venticinque = libretto.listavotiUguali(25);
 		//System.out.println(venticinque);
-		
+		System.out.println("TASK 2 : stampa i voti uguali al 25 : \n");
 		Libretto librettoventi5 = libretto.votiUguali(25);
 		System.out.println(librettoventi5);                 // TASK 2 
 		
+		System.out.println("TASK 3 : cerca un corso e stampane il voto: \n");
 		Voto prova = libretto.ricercaCorso("Tecniche di programmazione");
 		System.out.println(prova);      									// TASK 3
 	}
