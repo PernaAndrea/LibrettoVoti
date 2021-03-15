@@ -28,12 +28,12 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label fx:id="txtEsame" text="Nome Esame" />
-                  <Label fx:id="txtVoto" text="Voto" GridPane.columnIndex="1" />
-                  <Label fx:id="txtData" text="Data" GridPane.columnIndex="2" />
+                  <Label text="Nome Esame" />
+                  <Label text="Voto" GridPane.columnIndex="1" />
+                  <Label text="Data" GridPane.columnIndex="2" />
                   <Button mnemonicParsing="false" onAction="#handleInserisci" text="Inserisci" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                  <TextField GridPane.rowIndex="1" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="txtEsame" GridPane.rowIndex="1" />
+                  <TextField fx:id="txtVoto" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <TextField GridPane.columnIndex="2" GridPane.rowIndex="1" />
                   <DatePicker fx:id="pickerEsame" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                </children>
