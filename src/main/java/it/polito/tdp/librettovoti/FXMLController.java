@@ -15,7 +15,7 @@ import javafx.event.ActionEvent;
 
 	public class FXMLController {
 		
-		private Libretto model= new Libretto();
+		private Libretto model= new Libretto() ;
 	
 
 	    @FXML
@@ -73,8 +73,8 @@ import javafx.event.ActionEvent;
     	}catch(DateTimeParseException ee) {
     		txtResult.setText("Errore: la data deve essere nel formato YYYY-MM-DD");
     		return;
-    	}*/
-    	LocalDate data = pickerEsame.getValue();
+    	}*/ 
+    	LocalDate data = pickerEsame.getValue(); 
     	if(data==null) {
     		txtResult.setText("Errore: la data è obbligatoria");
     		return;

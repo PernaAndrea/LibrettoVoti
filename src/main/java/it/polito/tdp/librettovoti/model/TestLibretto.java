@@ -49,12 +49,17 @@ public class TestLibretto {
 		//List<Voto> venticinque = libretto.listavotiUguali(25);
 		//System.out.println(venticinque);
 		System.out.println("TASK 2 : stampa i voti uguali al 25 : \n");
-		Libretto librettoventi5 = libretto.votiUguali(25);
+		Libretto librettoventi5 = libretto.votiUguali(2);
 		System.out.println(librettoventi5);                 // TASK 2 
 		
 		System.out.println("TASK 3 : cerca un corso e stampane il voto: \n");
 		Voto prova = libretto.ricercaCorso("Tecniche di programmazione");
-		System.out.println(prova);      									// TASK 3
+		System.out.println(prova+"\n");    
+		// TASK 3
+		System.out.println("TASK 3 : cerca un corso e stampane il voto: \n");
+		Voto prova2 = libretto.ricercaCorso("Analisi 2");
+		System.out.println(prova2+"\n"); 
 	}
+	
 
 }
